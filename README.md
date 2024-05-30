@@ -1,9 +1,9 @@
 # Project_1_Youtube_Data_Harvesting_and_Data_Warehousing
-Data Analytics Project
-Overview
+**Data Analytics Project**
+**Overview**
 This project aims to extract data from a specific YouTube channel using its Channel ID and store the extracted data in a SQL database. The main objective is to facilitate data analysis and reporting by systematically organizing and storing the channel's data. This includes retrieving video details, statistics, and other relevant metadata to provide insights into the channel's performance and content trends.
 
-Features
+**Features**
 Channel Data Extraction: Fetch detailed information about videos from a specified YouTube channel using the Channel ID.
 Data Storage: Store the extracted data in a SQL database for efficient querying and analysis.
 Automated Data Pipeline: Set up an automated process to regularly update the database with the latest data from the channel.
