@@ -6,9 +6,9 @@ def insert_data(channel_data, video_data,comment_data):
         print("Storing the Data in SQL Warehouse")
     # Connect to MySQL server
         mydb = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="Hariharan@27"
+            host="Your Hostname",
+            user="Your UserID",
+            password="Your Password"
         )
 
         if mydb.is_connected():
