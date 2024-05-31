@@ -13,25 +13,30 @@ This project aims to extract data from a specific YouTube channel using its Chan
 - **Python**: The core programming language used for developing the data extraction and processing scripts.
 - **YouTube Data API v3**: Utilized to fetch data from the YouTube channel. For accessing this API you have to install a python pacakge called *'google-api-python-client'*
 
-To install this package:
+    To install this package:
 
-                pip install google-api-python-client
+            pip install google-api-python-client
 - **MySQL Database**: MySQL is a Relational Database Management System (RDBMS) whereas the structured Query Language (SQL) is the language used for handling the RDBMS using commands i.e Creating, Inserting, Updating and Deleting the data from the databases.
 - **Pandas**: For data manipulation and transformation.
-To install this package:
-                
-                pip install Pandas
-- **mysql-connetor**: A MySQL database connector for Python, which is officially supported by Oracle. It provides a pure Python interface to MySQL databases, allowing you to connect to MySQL servers, execute SQL queries, and retrieve results.
-To install this package:
 
-               pip install mysql-connector-python
+    To install this package:
+                
+            pip install Pandas
+- **mysql-connetor**: A MySQL database connector for Python, which is officially supported by Oracle. It provides a pure Python interface to MySQL databases, allowing you to connect to MySQL servers, execute SQL queries, and retrieve results.
+
+    To install this package:
+
+            pip install mysql-connector-python
 - **Streamlit** - Streamlit is an open-source Python library designed to create and share custom web applications for data science and machine learning projects with minimal effort. Its simplicity and focus on rapid prototyping make it a popular choice among data scientists and developers who need to quickly visualize and interact with data. Also you can download the data as csv file from the web application.
-To install this package:
-                pip install streamlit
+
+    To install this package:
+                
+            pip install streamlit
+If you want you can install the packages sepeartely by above given command (or) you can also run below requirement file to install all the packages.
 ### Installation
 Install the pytohn package that you needed for this project are provide in the *requirement.txt* file. Execute the requiremnt text in the cmd prompt or in terminal if you are using mac. By using the below command.
 
-                pip install -r requirements.txt
+            pip install -r requirements.txt
 ### Prerequisites
 - Python 3.x installed on your system.
 - A Google Cloud Project with YouTube Data API enabled.
