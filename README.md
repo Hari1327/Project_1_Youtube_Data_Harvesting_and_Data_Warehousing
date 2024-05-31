@@ -36,7 +36,7 @@ Install the pytohn package that you needed for this project are provide in the *
 - Python 3.x installed on your system.
 - A Google Cloud Project with YouTube Data API enabled.
 - API Key from the Google Developer Console.
-- MySQL installed and set up.
+- MySQL installed and set up your hostame, User ID and password.
 - Streamlit web application sign in 
 ### Usage
 To clone a GitHub repository, you can use the *git clone* command
