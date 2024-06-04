@@ -4,7 +4,7 @@ from googleapiclient.discovery import build
 import re
 
 # Set up YouTube Data API access
-api_key = "AIzaSyA8sFEUjjDAsWzxlJfOCko47e-TWkQMPXU"
+api_key = "Your API Key"
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 
