@@ -3,9 +3,38 @@ import mysql.connector
 import pandas as pd
 import Harvest
 import Warehouse
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 
+mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Hariharan@27", database = "youtube_test")
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
+
+channel_count = pd.read_sql_query("SELECT COUNT(Channel_ID) AS channel_count FROM channels",mydb)
+video_count = pd.read_sql_query("SELECT COUNT(Video_ID) AS video_count FROM videos",mydb)
+comment_count = pd.read_sql_query("SELECT COUNT(Comment_ID) AS comment_count FROM comments",mydb)
+
+
+count = st.markdown(
+        """
+        <div style="text-align: left">
+            <h2 style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;">Channels</h2>
+            <h1 style="color: crimson; font-family: 'Poppins', sans-serif; font-size: 60px; font-weight: bold; margin-top: -15px;margin-left: 50px">{ch_count}</h1>
+        </div>
+
+        <div style=" margin-top: -160px;text-align: center;">
+            <h2 style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;">Videos</h2>
+            <h1 style="color: crimson; font-family: 'Poppins', sans-serif; font-size: 60px; font-weight: bold; margin-top: -15px; margin-left: -5px">{v_count}</h1>
+        </div>
+
+         <div style=" margin-top: -165px;text-align: right;">
+            <h2 style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;">Comments</h2>
+            <h1 style="color: crimson; font-family: 'Poppins', sans-serif; font-size: 65px; font-weight: bold; margin-top: -15px; margin-left: 5px">{cm_count}</h1>
+        </div>
+        """.format(ch_count=channel_count.at[0, 'channel_count'],v_count=video_count.at[0, 'video_count'], cm_count = comment_count.at[0,'comment_count']), 
+        unsafe_allow_html=True
+    )
+
 channel_id = st.text_input("Enter YouTube Channel ID:")
 
 def extract_insert_data_st():
@@ -30,8 +59,11 @@ query_options = [
     ]
 selected_query = st.selectbox("Select Question:", query_options)
 
+
+
+
 if st.button("Execute", type='secondary'):
-    mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Hariharan@27", database = "youtube_test")
+    
     if selected_query == query_options[0]:
         query_result = pd.read_sql_query("SELECT videos.Video_name, channels.Channel_Name FROM videos INNER JOIN channels ON videos.Channel_ID = channels.Channel_ID", mydb)
     elif selected_query == query_options[1]:
