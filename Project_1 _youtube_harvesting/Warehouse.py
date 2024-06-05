@@ -7,9 +7,9 @@ def insert_data(channel_data, video_data, comment_data):
         
         # Connect to MySQL server
         mydb = mysql.connector.connect(
-            host="Your Host Name",
-            user="Your UserID",
-            password="Your Password"
+            host="localhost",
+            user="root",
+            password="Hariharan@27"
         )
 
         if mydb.is_connected():
@@ -34,8 +34,8 @@ def insert_data(channel_data, video_data, comment_data):
             ''')
             mycursor.execute('''
                 CREATE TABLE IF NOT EXISTS videos (
-                    Channel_ID VARCHAR(100) NOT NULL,
-                    Channel_Name VARCHAR(255) ,
+                    Channel_ID VARCHAR(100),
+                    Channel_Name VARCHAR(255),
                     Video_ID VARCHAR(50) NOT NULL, 
                     Playlist_ID VARCHAR(50), 
                     Video_name VARCHAR(255), 
@@ -53,8 +53,8 @@ def insert_data(channel_data, video_data, comment_data):
             ''')
             mycursor.execute('''
                 CREATE TABLE IF NOT EXISTS comments (
-                    Channel_ID VARCHAR(100) NOT NULL,
-                    Video_ID VARCHAR(50) NOT NULL, 
+                    Channel_ID VARCHAR(100) ,
+                    Video_ID VARCHAR(50), 
                     Comment_text TEXT, 
                     Comment_ID VARCHAR(50) NOT NULL, 
                     Author VARCHAR(100), 
@@ -71,7 +71,6 @@ def insert_data(channel_data, video_data, comment_data):
             mydb.commit()
 
             Playlist_Id = channel_data['Playlist_Id']
-            
             # Insert video data
             for _, row1 in video_data.iterrows():
                 video_datetime_str = row1['Published_Date'].replace('T', ' ').replace('Z', '')
