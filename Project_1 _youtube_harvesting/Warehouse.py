@@ -71,6 +71,7 @@ def insert_data(channel_data, video_data, comment_data):
             mydb.commit()
 
             Playlist_Id = channel_data['Playlist_Id']
+            
             # Insert video data
             for _, row1 in video_data.iterrows():
                 video_datetime_str = row1['Published_Date'].replace('T', ' ').replace('Z', '')
