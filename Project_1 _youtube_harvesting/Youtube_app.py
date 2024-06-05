@@ -12,7 +12,7 @@ mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Ha
 #Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
 
-# Extracting the Count of Channel, Videos and Comments for display it in app screen
+# Extracting the Count of Channel, Videos and Comments for display that in app screen
 channel_count = pd.read_sql_query("SELECT COUNT(Channel_ID) AS channel_count FROM channels",mydb)
 video_count = pd.read_sql_query("SELECT COUNT(Video_ID) AS video_count FROM videos",mydb)
 comment_count = pd.read_sql_query("SELECT COUNT(Comment_ID) AS comment_count FROM comments",mydb)
