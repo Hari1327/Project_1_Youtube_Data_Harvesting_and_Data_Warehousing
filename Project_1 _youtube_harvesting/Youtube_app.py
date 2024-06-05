@@ -6,10 +6,13 @@ import Warehouse
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
-
+# Connecting to Database
 mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Hariharan@27", database = "youtube_test")
+
+#Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
 
+# Extracting the Count of Channel, Videos and Comments for display it in app screen
 channel_count = pd.read_sql_query("SELECT COUNT(Channel_ID) AS channel_count FROM channels",mydb)
 video_count = pd.read_sql_query("SELECT COUNT(Video_ID) AS video_count FROM videos",mydb)
 comment_count = pd.read_sql_query("SELECT COUNT(Comment_ID) AS comment_count FROM comments",mydb)
@@ -37,6 +40,7 @@ count = st.markdown(
 
 channel_id = st.text_input("Enter YouTube Channel ID:")
 
+# Here the Harvest and Warehouse file was called to get the data from channel and stored in the Mysql DB
 def extract_insert_data_st():
     if st.button("Extract Data and Store in Database",type='primary'):
             channel_data, video_df, comment_df = Harvest.extract_data(channel_id)
@@ -45,6 +49,7 @@ def extract_insert_data_st():
 
 extract_insert_data_st()
 
+# Query section
 query_options = [
     "What are the names of all the videos and their corresponding channels?",
     "Which channels have the most number of videos, and how many videos do they have?",
