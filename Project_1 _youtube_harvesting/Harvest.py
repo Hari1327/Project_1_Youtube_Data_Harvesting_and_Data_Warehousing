@@ -125,7 +125,7 @@ def convert_to_minutes(time_string):
     else:
       return 0
 
-#Extract the first 100 comments of each video in the YouTube channel using the video_ids
+#Extract the first 50 comments of each video in the YouTube channel using the video_ids
 def extract_comments(video_ids):
     print("Extract Comments Data")
     Comment_data=[]
