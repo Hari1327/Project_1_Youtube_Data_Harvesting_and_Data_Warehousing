@@ -3,8 +3,6 @@ import mysql.connector
 import pandas as pd
 import Harvest
 import Warehouse
-import matplotlib.pyplot as plt
-import plotly.graph_objects as go
 
 # Connecting to Database
 mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Hariharan@27", database = "youtube_test")
