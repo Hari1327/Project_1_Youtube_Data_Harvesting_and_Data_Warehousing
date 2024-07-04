@@ -5,7 +5,7 @@ import Harvest
 import Warehouse
 
 # Connecting to Database
-mydb = mysql.connector.connect(host = "localhost", user = "root", password = "Hariharan@27", database = "youtube_test")
+mydb = mysql.connector.connect(host = "127.0.0.1:22", user = "root", password = "Hariharan@27", database = "youtube_test")
 
 #Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
