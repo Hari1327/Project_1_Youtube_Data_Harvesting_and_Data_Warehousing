@@ -5,7 +5,13 @@ import Harvest
 import Warehouse
 
 # Connecting to Database
-mydb = mysql.connector.connect(host = "127.0.0.1:22", user = "root", password = "Hariharan@27", database = "youtube_test")
+toml_data = toml.load("secrets.toml")
+HOST_NAME = toml_data['mysql']['host']
+DATABASE = toml_data['mysql']['database']
+PASSWORD = toml_data['mysql']['password']
+USER = toml_data['mysql']['user']
+
+mydb = mysql.connector.connect(host = HOST_NAME, user = USER, password = PASSWORD, database = DATABASE)
 
 #Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
