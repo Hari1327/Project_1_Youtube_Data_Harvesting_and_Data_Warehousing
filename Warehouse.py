@@ -5,13 +5,14 @@ def insert_data(channel_data, video_data, comment_data):
     try:
         print("Storing the Data in SQL Warehouse")
         
-        # Connect to MySQL server
-        mydb = mysql.connector.connect(
-            host="127.0.0.1:22",
-            user="root",
-            password="Hariharan@27"
-        )
+        # Connecting to Database
+        toml_data = toml.load("secrets.toml")
+        HOST_NAME = toml_data['mysql']['host']
+        DATABASE = toml_data['mysql']['database']
+        PASSWORD = toml_data['mysql']['password']
+        USER = toml_data['mysql']['user']
 
+        mydb = mysql.connector.connect(host = HOST_NAME, user = USER, password = PASSWORD, database = DATABASE)
         if mydb.is_connected():
             print("Successfully connected to MySQL database")
             mycursor = mydb.cursor()
