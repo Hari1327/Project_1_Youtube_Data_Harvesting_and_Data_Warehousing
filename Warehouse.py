@@ -7,7 +7,7 @@ def insert_data(channel_data, video_data, comment_data):
         
         # Connect to MySQL server
         mydb = mysql.connector.connect(
-            host="localhost",
+            host="127.0.0.1:22",
             user="root",
             password="Hariharan@27"
         )
