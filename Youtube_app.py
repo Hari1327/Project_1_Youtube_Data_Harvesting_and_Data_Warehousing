@@ -6,13 +6,20 @@ import Warehouse
 import toml
 
 # Connecting to Database
-toml_data = toml.load("secrets.toml")
-HOST_NAME = toml_data['mysql']['host']
-DATABASE = toml_data['mysql']['database']
-PASSWORD = toml_data['mysql']['password']
-USER = toml_data['mysql']['user']
+try:
+    config = toml.load("secrets.toml")
+except toml.TomlDecodeError as e:
+    st.error(f"Error decoding TOML file: {e}")
+    st.stop()
 
-mydb = mysql.connector.connect(host = HOST_NAME, user = USER, password = PASSWORD, database = DATABASE)
+# Extract MySQL connection details
+mysql_config = config.get('mysql', {})
+host = mysql_config.get('host')
+user = mysql_config.get('user')
+password = mysql_config.get('password')
+database = mysql_config.get('database')
+
+mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
 
 #Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
