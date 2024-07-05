@@ -7,10 +7,10 @@ def insert_data(channel_data, video_data, comment_data):
         print("Storing the Data in SQL Warehouse")
         
         # Connecting to Database
-        host = st.secrets["mysql"]["host"]
-        user = st.secrets["mysql"]["user"]
-        password = st.secrets["mysql"]["password"]
-        database = st.secrets["mysql"]["database"]
+        host = st.secrets["credentials"]["host"]
+        user = st.secrets["credentials"]["user"]
+        # password = st.secrets["mysql"]["password"]
+        # database = st.secrets["mysql"]["database"]
         
         mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
         if mydb.is_connected():
