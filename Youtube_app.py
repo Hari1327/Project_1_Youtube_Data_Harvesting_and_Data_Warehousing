@@ -7,8 +7,8 @@ import toml
 
 # Connecting to Database
 host = st.secrets["mysql"]["host"]
-user = st.secrets["mysql"]["user"]
-password = st.secrets["mysql"]["password"]
+user = st.secrets["credentials"]["user"]
+password = st.secrets["credentials"]["password"]
 database = st.secrets["mysql"]["database"]
 
 mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
