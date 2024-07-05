@@ -6,18 +6,10 @@ import Warehouse
 import toml
 
 # Connecting to Database
-try:
-    config = toml.load("secrets.toml")
-except toml.TomlDecodeError as e:
-    st.error(f"Error decoding TOML file: {e}")
-    st.stop()
-
-# Extract MySQL connection details
-mysql_config = config.get('mysql', {})
-host = mysql_config.get('host')
-user = mysql_config.get('user')
-password = mysql_config.get('password')
-database = mysql_config.get('database')
+host = st.secrets["mysql"]["host"]
+user = st.secrets["mysql"]["user"]
+password = st.secrets["mysql"]["password"]
+database = st.secrets["mysql"]["database"]
 
 mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
 
