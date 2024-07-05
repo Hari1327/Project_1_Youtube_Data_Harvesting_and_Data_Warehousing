@@ -7,14 +7,10 @@ def insert_data(channel_data, video_data, comment_data):
         print("Storing the Data in SQL Warehouse")
         
         # Connecting to Database
-        config = toml.load("secrets.toml")
-
-        # Extract MySQL connection details
-        mysql_config = config.get('mysql', {})
-        host = mysql_config.get('host')
-        user = mysql_config.get('user')
-        password = mysql_config.get('password')
-        database = mysql_config.get('database')
+        host = st.secrets["mysql"]["host"]
+        user = st.secrets["mysql"]["user"]
+        password = st.secrets["mysql"]["password"]
+        database = st.secrets["mysql"]["database"]
         
         mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
         if mydb.is_connected():
