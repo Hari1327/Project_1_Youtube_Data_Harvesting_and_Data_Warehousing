@@ -6,12 +6,12 @@ import Warehouse
 import toml
 
 # Connecting to Database
-host = st.secrets["mysql"]["host"]
+# host = st.secrets["mysql"]["host"]
 user = st.secrets["credentials"]["user"]
 password = st.secrets["credentials"]["password"]
-database = st.secrets["mysql"]["database"]
+# database = st.secrets["mysql"]["database"]
 
-mydb = mysql.connector.connect(host = host, user = user, password = password, database = database)
+mydb = mysql.connector.connect( user = user, password = password)
 
 #Title of the app
 st.title("YouTube Channel Data Harvesting and Data Warehousing")
