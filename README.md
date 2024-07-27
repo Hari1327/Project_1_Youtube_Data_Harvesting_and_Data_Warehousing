@@ -63,6 +63,9 @@ To run this Streamlit application run the below command
 - YouTube_app.py - contains the streamlit application settings. 
 - requirements.txt: List of Python dependencies.  
 Contributions - - - Contributions are welcome! If you have any suggestions or improvements, feel free to create a pull request or open an issue.
+
+## Meidum Article
+https://medium.com/@nuhari75/youtube-data-harvesting-and-warehousing-506dc545e745
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
