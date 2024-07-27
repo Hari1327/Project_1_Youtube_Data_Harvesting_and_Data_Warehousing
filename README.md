@@ -66,6 +66,8 @@ Contributions - - - Contributions are welcome! If you have any suggestions or im
 
 ## Meidum Article
 https://medium.com/@nuhari75/youtube-data-harvesting-and-warehousing-506dc545e745
+
+## Demo Youtube video: https://youtu.be/yKP8LAEQr0M?si=_isRLu-SZP7jY5A4
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
